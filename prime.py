@@ -6,6 +6,7 @@ num = int(input("Enter a number: "))
 # define a flag variable
 flag = False
 
+#Checking number is negative or one
 if num == 0 or num == 1:
     print(num, "is not a prime number")
 elif num > 1:
