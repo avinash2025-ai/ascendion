@@ -1,25 +1,30 @@
-from datetime import datetime, date 
-import pandas as pd 
-from pyspark.sql import Row 
-from pyspark.sql import SparkSession 
+# a = lambda x,y : x * y
 
-# creating the session 
-spark = SparkSession.builder.getOrCreate() 
+# print(a(2,3))
 
-# schema creation by passing list 
-df = spark.createDataFrame([ 
-	Row(a=1, b=4., c='GFG1', d=date(2000, 8, 1), 
-		e=datetime(2000, 8, 1, 12, 0)), 
-	
-	Row(a=2, b=8., c='GFG2', d=date(2000, 6, 2), 
-		e=datetime(2000, 6, 2, 12, 0)), 
-	
-	Row(a=4, b=5., c='GFG3', d=date(2000, 5, 3), 
-		e=datetime(2000, 5, 3, 12, 0)) 
-]) 
 
-# show table 
-df.show() 
+# def myfunc(n):
+#   return lambda a : a - n
 
-# show schema 
-df.printSchema() 
+# mydoubler = myfunc(2)
+
+# print(mydoubler(11))
+
+
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+    
+  def is_senior_citizen(self):
+    if self.age > 60:
+      print("Senior Citizen")
+    else:
+      print("Not a Senior Citizen")
+
+
+p1 = Person("John", 36)
+print(p1.name)
+print(p1.age)
+p1.is_senior_citizen()
+
