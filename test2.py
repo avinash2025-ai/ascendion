@@ -1,30 +1,22 @@
-# a = lambda x,y : x * y
+class Student:
+    college_name = "PESCE Mandya"
 
-# print(a(2,3))
+    def __init__(self,name,subject,marks):
+        self.name = name
+        self.subject = subject
+        self.marks = marks
 
+    def student_details(self):
+        print("Name     : ", self.name)
+        print("Subject  : ", self.subject)
+        print("Marks    : ", self.marks)
 
-# def myfunc(n):
-#   return lambda a : a - n
+print(Student.college_name)
+s1 = Student("Avinash","Math",98)
+s1.student_details()
 
-# mydoubler = myfunc(2)
+s2 = Student("Rajeev","Phy",99)
+s2.student_details()
 
-# print(mydoubler(11))
-
-
-class Person:
-  def __init__(self, name, age):
-    self.name = name
-    self.age = age
-    
-  def is_senior_citizen(self):
-    if self.age > 60:
-      print("Senior Citizen")
-    else:
-      print("Not a Senior Citizen")
-
-
-p1 = Person("John", 36)
-print(p1.name)
-print(p1.age)
-p1.is_senior_citizen()
-
+s3 = Student("Ravindra","Chem",96)
+s3.student_details()
