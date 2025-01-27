@@ -1,13 +1,16 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.types import *
+from pyspark.sql.functions import col
 
-spark = SparkSession.builder.getOrCreate()
+spark = SparkSession.builder.appName("Sparksql").getOrCreate()
 
-#read CSV into PySpark DataFrame
-df = spark.read.csv('people_data.csv',header=True)
+print(spark.version)
 
-#view resulting DataFrame
+df = spark.read.csv("people_data.csv",header=True)
+#df.select("First Name","Sex","Job Title").show()
+#df.filter(col("Sex") == "Male").show()
+#df.orderBy("First Name").show()
+#df.groupBy("Sex").count().show()
+# df = df.withColumnRenamed("Date of birth", "DOB")\
+#        .withColumnRenamed("Job Title", "Position")
 df.show()
-
-df.createOrReplaceTempView("peoples")
-spark.sql("select email,sex from peoples").show()
